@@ -1,0 +1,65 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ors-backoffice-bff
+  description: IDP ORS Back Office BFF
+  annotations:
+    github.com/project-slug: your-org/ors-backoffice-bff  # Update with actual repo URL
+    backstage.io/techdocs-ref: dir:.
+    circleci.com/project-slug: github/your-org/ors-backoffice-bff  # Update if using CircleCI
+    gitlab.com/project-slug: your-org/ors-backoffice-bff  # If using GitLab CI
+    sonarqube.org/project-key: ors-backoffice-bff  # If using SonarQube for code quality
+    pagerduty.com/service-id: ors-backoffice-bff  # Update if applicable
+  tags:
+    - python
+    - backend
+    - bff
+spec:
+  type: service
+  lifecycle: production
+  owner: IELTS  # Update if a team or individual owns it
+  system: ors-platform  # Update based on your system classification
+  dependsOn:
+    - component:cmds-integration-client-v1
+    - component:idp-aws
+    - component:idp-core
+    - component:ors-reporting-aggregator-client-v1
+    - component:ors-booking-client-v1
+    - component:ors-booking-client-v2
+    - component:ors-data
+    - component:ors-email-integration-client-v1
+    - component:ors_icapps-integration-client-v1
+    - component:ors-iam-client-v1
+    - component:ors-offline-payment-is-client-v1
+    - component:ors-organisation-client-v1
+    - component:ors-payment-client-v1
+    - component:ors-product-catalogue-client-v1
+    - component:ors_reference_data_client_v1
+    - component:ors-receipt-client-v1
+    - component:ors-result-client-v1
+    - component:ors-result-client-v3
+    - component:ors-session-aggregator-client-v1
+    - component:ors-session-client-v1
+    - component:ors-session-client-v2
+    - component:ors-staff-profile-client-v1
+    - component:ors-terms-and-conditions-client-v1
+    - component:ors-test-centre-client-v1
+    - component:ors_test_centre_client_v2
+    - component:ors_test_centre_client_v3
+    - component:ors-user-profile-client-v1
+    - component:ors-voucher-is-client-v1
+  providesApis:
+    - ors-backoffice-bff-api  # Define API name if applicable
+  consumesApis:
+    - ors-session-api
+    - ors-user-profile-api
+    - ors-booking-api
+  links:
+    - title: API Documentation
+      url: https://api-docs.your-org.com/ors-backoffice-bff
+    - title: CI/CD Pipelines
+      url: https://ci.your-org.com/ors-backoffice-bff
+    - title: SonarQube Report
+      url: https://sonarqube.your-org.com/projects/ors-backoffice-bff
+    - title: On-Call PagerDuty
+      url: https://pagerduty.your-org.com/services/ors-backoffice-bff
