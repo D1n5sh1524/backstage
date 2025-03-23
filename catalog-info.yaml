@@ -1,3 +1,29 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ielts
+  description: Group description
+spec:
+  type: team
+  profile:
+    displayName: IELTS
+  parent: optional-parent-group
+  children: []
+  members: []
+
+---
+
+### System entities
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ors-platform
+  description: Student plcement application services.
+spec:
+  owner: ielts
+
+---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
@@ -13,21 +39,8 @@ spec:
   system: ors-platform
   consumesApis:
     - cmds-integration-client-v1
-    - ors-reporting-aggregator-client-v1
-    - ors-booking-client-v1
-    - ors-booking-client-v2
     - ors-data
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: ors-booking
-  description: ORS Booking Service
-spec:
-  type: service
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
+
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -39,17 +52,7 @@ spec:
   lifecycle: production
   owner: ielts
   system: ors-platform
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: ors-reporting-aggregator
-  description: ORS Reporting Aggregator Service
-spec:
-  type: service
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
+
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
