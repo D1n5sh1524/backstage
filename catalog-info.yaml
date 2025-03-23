@@ -16,7 +16,3 @@ metadata:
   description: ORS Platform system that includes multiple microservices
 spec:
   owner: ielts
-
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
