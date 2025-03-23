@@ -13,12 +13,23 @@ spec:
   members: []
 
 ---
+
+### System entities
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ors-platform
+  description: Student plcement application services.
+spec:
+  owner: IELTS
+
+---
 ## API components
 
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: ors-backoffice-bff-api
+  name: ors-backoffice-bff
   description: This component has swagger definition.
   annotations:
     backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
@@ -31,60 +42,3 @@ spec:
   lifecycle: development
   definition:
     $text: https://gitlab.com/idp-education/ielts/ors/ors-backoffice-bff/-/blob/develop/contracts/v1/api/openapi.yaml
-  dependsOn:
-  - api:default/ors-user-profile-api
-  - api:default/ors-booking-api
-  - api:default/ors-session-api
----
-
-## API components
-
-  apiVersion: backstage.io/v1alpha1
-  kind: API
-  metadata:
-    name: ors-booking-api
-    description: This component has swagger definition.
-    annotations:
-      backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
-  spec:
-    owner: IELTS
-    type: openapi
-    lifecycle: development
-    definition:
-      $text: https://gitlab.com/idp-education/ielts/ors/ors-booking/-/blob/develop/contracts/v1/api/openapi.yaml
----
-
-## API components
-
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: ors-session-api
-  description: This component has swagger definition.
-  annotations:
-    backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
-spec:
-  owner: IELTS
-  type: openapi
-  lifecycle: development
-  definition:
-    $text: https://gitlab.com/idp-education/ielts/ors/ors-session/-/blob/develop/contracts/v1/api/openapi.yaml
----
-
-
-## API components
-
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: ors-session-api
-  description: This component has swagger definition.
-  annotations:
-    backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
-spec:
-  owner: IELTS
-  type: openapi
-  lifecycle: development
-  definition:
-    $text: https://gitlab.com/idp-education/ielts/ors/ors-session/-/blob/develop/contracts/v1/api/openapi.yaml
----
