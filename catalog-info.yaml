@@ -1,64 +1,63 @@
----
-apiVersion: backstage.io/v1alpha1
-kind: Group
-metadata:
-  name: IELTS
-  description: Group description
-spec:
-  type: team
-  profile:
-    displayName: IELTS
-  parent: optional-parent-group
-  children: []
-  members: []
-
----
-
-### System entities
-apiVersion: backstage.io/v1alpha1
-kind: System
-metadata:
-  name: ors-platform
-  description: Student plcement application services.
-spec:
-  owner: IELTS
-
----
-
-### Define Components
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: ors-backoffice-bff
-  description: This component has ors-backoffice Swagger definition.
-  annotations:
-    backstage.io/techdocs-ref: dir:.
-  tags:
-    - cp-swagger
-spec:
-  owner: =IELTS
-  type: service
-  lifecycle: development
-  system: ors-platforn
-  providesApis:
-    - api:default/ors-backoffice-bff
-
----
-## API components
-
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: ors-backoffice-bff
-  description: This component has swagger definition.
-  annotations:
-    backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
+  description: Backoffice BFF API that consumes multiple microservices
   tags:
-    - ors-backoffice-bff-api
-    - v1
+    - bff
+    - backoffice
 spec:
-  owner: IELTS
   type: openapi
-  lifecycle: development
-  definition:
-    $text: https://gitlab.com/idp-education/ielts/ors/ors-backoffice-bff/-/blob/develop/contracts/v1/api/openapi.yaml
+  lifecycle: production
+  owner: ielts
+  system: ors-platform
+  consumesApis:
+    - cmds-integration-client-v1
+    - ors-reporting-aggregator-client-v1
+    - ors-booking-client-v1
+    - ors-booking-client-v2
+    - ors-data
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ors-booking
+  description: ORS Booking Service
+spec:
+  type: service
+  lifecycle: production
+  owner: ielts
+  system: ors-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cmds-integration-client-v1
+  description: CMDS Integration Client Service
+spec:
+  type: service
+  lifecycle: production
+  owner: ielts
+  system: ors-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ors-reporting-aggregator
+  description: ORS Reporting Aggregator Service
+spec:
+  type: service
+  lifecycle: production
+  owner: ielts
+  system: ors-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ors-data
+  description: ORS Data Service
+spec:
+  type: service
+  lifecycle: production
+  owner: ielts
+  system: ors-platform
