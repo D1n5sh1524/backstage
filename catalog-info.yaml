@@ -16,78 +16,7 @@ metadata:
   description: ORS Platform system that includes multiple microservices
 spec:
   owner: ielts
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: ors-backoffice-bff
-  description: Backoffice BFF API that consumes multiple microservices
-  tags:
-    - bff
-    - backoffice
-spec:
-  type: openapi
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
-  consumesApis:
-    - cmds-integration-client-v1
-    - ors-reporting-aggregator-client-v1
-    - ors-booking-client-v1
-    - ors-booking-client-v2
-    - ors-data
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: ors-booking-client-v1
-  description: ORS Booking Client API v1
-spec:
-  type: openapi
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: ors-booking-client-v2
-  description: ORS Booking Client API v2
-spec:
-  type: openapi
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: cmds-integration-client-v1
-  description: CMDS Integration Client API
-spec:
-  type: openapi
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: ors-reporting-aggregator-client-v1
-  description: ORS Reporting Aggregator API
-spec:
-  type: openapi
-  lifecycle: production
-  owner: ielts
-  system: ors-platform
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: ors-data
-  description: ORS Data API
-spec:
-  type: openapi
+
   lifecycle: production
   owner: ielts
   system: ors-platform
