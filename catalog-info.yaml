@@ -18,12 +18,12 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: ors-backoffice-bff
+  name: ors-backoffice-bff-api
   description: This component has swagger definition.
   annotations:
     backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
   tags:
-    - ors-backoffice-bff
+    - ors-backoffice-bff-api
     - v1
 spec:
   owner: IELTS
@@ -32,7 +32,9 @@ spec:
   definition:
     $text: https://gitlab.com/idp-education/ielts/ors/ors-backoffice-bff/-/blob/develop/contracts/v1/api/openapi.yaml
   dependsOn:
-    - component:default/ors-user-profile
+  - api:default/ors-user-profile-api
+  - api:default/ors-booking-api
+  - api:default/ors-session-api
 ---
 
 ## API components
@@ -40,17 +42,49 @@ spec:
   apiVersion: backstage.io/v1alpha1
   kind: API
   metadata:
-    name: ors-user-profile
+    name: ors-booking-api
     description: This component has swagger definition.
     annotations:
       backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
-    tags:
-      - ors-user-profile
-      - v1
   spec:
     owner: IELTS
     type: openapi
     lifecycle: development
     definition:
-      $text: https://gitlab.com/idp-education/ielts/ors/ors-user-profile/-/blob/develop/contracts/v1/api/openapi.yaml
+      $text: https://gitlab.com/idp-education/ielts/ors/ors-booking/-/blob/develop/contracts/v1/api/openapi.yaml
+---
+
+## API components
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ors-session-api
+  description: This component has swagger definition.
+  annotations:
+    backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
+spec:
+  owner: IELTS
+  type: openapi
+  lifecycle: development
+  definition:
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-session/-/blob/develop/contracts/v1/api/openapi.yaml
+---
+
+
+## API components
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ors-session-api
+  description: This component has swagger definition.
+  annotations:
+    backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/AAW/pages/898826491/Microservice+Customer+Profile
+spec:
+  owner: IELTS
+  type: openapi
+  lifecycle: development
+  definition:
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-session/-/blob/develop/contracts/v1/api/openapi.yaml
 ---
