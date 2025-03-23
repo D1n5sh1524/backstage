@@ -3,26 +3,19 @@ apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: ielts
-  description: Group description
+  description: IELTS team responsible for ORS platform services
 spec:
   type: team
-  profile:
-    displayName: IELTS
-  parent: optional-parent-group
   children: []
   members: []
-
 ---
-
-### System entities
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
   name: ors-platform
-  description: Student plcement application services.
+  description: ORS Platform system that includes multiple microservices
 spec:
   owner: ielts
-
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
