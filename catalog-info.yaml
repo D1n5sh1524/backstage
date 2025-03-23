@@ -24,6 +24,26 @@ spec:
   owner: IELTS
 
 ---
+
+### Define Components
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ors-backoffice-bff
+  description: This component has ors-backoffice Swagger definition.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - cp-swagger
+spec:
+  owner: =IELTS
+  type: service
+  lifecycle: development
+  system: ors-platforn
+  providesApis:
+    - api:default/ors-backoffice-bff
+
+---
 ## API components
 
 apiVersion: backstage.io/v1alpha1
