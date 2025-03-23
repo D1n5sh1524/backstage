@@ -31,6 +31,8 @@ spec:
   lifecycle: development
   definition:
     $text: https://gitlab.com/idp-education/ielts/ors/ors-backoffice-bff/-/blob/develop/contracts/v1/api/openapi.yaml
+  dependsOn:
+    - component:default/ors-user-profile
 ---
 
 ## API components
@@ -51,6 +53,4 @@ spec:
     lifecycle: development
     definition:
       $text: https://gitlab.com/idp-education/ielts/ors/ors-user-profile/-/blob/develop/contracts/v1/api/openapi.yaml
-    consumesApis:
-      - api:default/ors-backoffice-bff
 ---
