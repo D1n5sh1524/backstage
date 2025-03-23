@@ -12,7 +12,6 @@ spec:
   children: []
   members: []
 
-
 ---
 ## API components
 
@@ -32,14 +31,9 @@ spec:
   lifecycle: development
   definition:
     $text: https://gitlab.com/idp-education/ielts/ors/ors-backoffice-bff/-/blob/develop/contracts/v1/api/openapi.yaml
-  consumesApis:
-    - api:default/aws_mp_progressive_profile
-
 ---
 
-
----
-  ## API components
+## API components
 
   apiVersion: backstage.io/v1alpha1
   kind: API
