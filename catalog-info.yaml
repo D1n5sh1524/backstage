@@ -16,9 +16,11 @@ metadata:
   description: ORS Platform system that includes multiple microservices
 spec:
   owner: ielts
+
+  
 ---
 apiVersion: backstage.io/v1alpha1
-kind: API
+kind: Component
 metadata:
   name: ors-backoffice-bff
   description: Backoffice BFF API that consumes multiple microservices
@@ -31,14 +33,14 @@ spec:
   owner: ielts
   system: ors-platform
   consumesApis:
-    - cmds-integration-client-v1
+    - cmds-integration
     - ors-data
 
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: cmds-integration-client-v1
+  name: cmds-integration
   description: CMDS Integration Client Service
 spec:
   type: service
