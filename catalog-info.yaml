@@ -33,7 +33,7 @@ spec:
   type: openapi
   lifecycle: development
   definition:
-    $text: https://gitlab.com/idp-education/shared/artifacts/devsecops
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-booking/-/blob/develop/contracts/v1/api/openapi.yaml
 
 ---
 
@@ -50,7 +50,7 @@ spec:
   type: openapi
   lifecycle: development
   definition:
-    $text: https://gitlab.com/idp-education/shared/artifacts/devsecops
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-voucher-is/-/blob/develop/contracts/v1/api/openapi.yaml
 
 
 ---
@@ -70,7 +70,7 @@ spec:
   type: openapi
   lifecycle: development
   definition:
-    $text: https://gitlab.com/idp-education/shared/artifacts/devsecops
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-backoffice-bff/-/blob/develop/contracts/v1/api/openapi.yaml
 
 ---
 
