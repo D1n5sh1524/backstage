@@ -16,3 +16,83 @@ metadata:
   description: ORS Platform system that includes multiple microservices
 spec:
   owner: ielts
+
+---
+## API components
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ors-booking
+  description: This component has swagger definition.
+  tags:
+    - ors-booking
+    - v1
+spec:
+  owner: ielts
+  type: openapi
+  lifecycle: development
+  definition:
+    $text: https://gitlab.com/idp-education/shared/artifacts/devsecops
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ors-voucher-is
+  description: This component has swagger definition.
+  tags:
+    - ors-voucher-is
+    - v1
+spec:
+  owner: ielts
+  type: openapi
+  lifecycle: development
+  definition:
+    $text: https://gitlab.com/idp-education/shared/artifacts/devsecops
+
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ors-backoffice-bff
+  description: This component has swagger definition.
+  annotations:
+    backstage.io/techdocs-ref: https://idpchange.atlassian.net/wiki/spaces/ID1/pages/2844557626/Technical+Design+Progressive+Profile+Microservice
+  tags:
+    - backoffic-bff
+    - v1
+spec:
+  owner: ielts
+  type: openapi
+  lifecycle: development
+  definition:
+    $text: https://gitlab.com/idp-education/shared/artifacts/devsecops
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ors-backoffice-bff
+  description: This component has live application definitions.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - ors-backoffice-bff
+spec:
+  owner: ielts
+  type: service
+  lifecycle: development
+  system: ors-platform
+  providesApis:
+    - api:default/ors-backoffice-bff
+  consumesApis:
+    - api:default/ors-booking
+    - api:default/ors-voucher-is
+
+---
+
