@@ -308,6 +308,23 @@ spec:
   definition:
     $text: https://gitlab.com/idp-education/ielts/ors/ors-icapps-integration/-/blob/develop/contracts/v1/api/openapi.yaml
 
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: oors-staff-profile
+  description: This component has swagger definition.
+  tags:
+    - ors-staff-profile
+    - v1
+spec:
+  owner: ielts
+  type: openapi
+  lifecycle: development
+  definition:
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-staff-profile/-/blob/develop/contracts/v1/api/openapi.yaml
+
 
 ---
 
@@ -365,7 +382,6 @@ spec:
     - api:default/ors-test-centre
     - api:default/ors-user-profile
     - api:default/ors-email-integration
-    - api:default/ors_icapps-integration
+    - api:default/ors-icapps-integration
 
 ---
-
