@@ -296,17 +296,17 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: ors_icapps-integration
+  name: ors-icapps-integration
   description: This component has swagger definition.
   tags:
-    - ors_icapps-integration
+    - ors-icapps-integration
     - v1
 spec:
   owner: ielts
   type: openapi
   lifecycle: development
   definition:
-    $text: https://gitlab.com/idp-education/ielts/ors/ors_icapps-integration/-/blob/develop/contracts/v1/api/openapi.yaml
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-icapps-integration/-/blob/develop/contracts/v1/api/openapi.yaml
 
 
 ---
