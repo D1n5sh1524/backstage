@@ -262,6 +262,23 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
+  name: ors-receipt
+  description: This component has swagger definition.
+  tags:
+    - ors-receipt
+    - v1
+spec:
+  owner: ielts
+  type: openapi
+  lifecycle: development
+  definition:
+    $text: https://gitlab.com/idp-education/ielts/ors/ors-receipt/-/blob/develop/contracts/v1/api/openapi.yaml
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
   name: ors-user-profile
   description: This component has swagger definition.
   tags:
